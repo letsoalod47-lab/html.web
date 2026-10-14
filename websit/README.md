@@ -30,6 +30,9 @@ websit/
 ├── services.html       # Services/Products page
 ├── enquiry.html        # Product/Service Enquiry form
 ├── contact.html        # Contact information and form
+├── images/
+│   └── CSS/
+│       └── style.css   # Shared stylesheet for all pages
 ├── logo.png            # Company logo (placeholder)
 ├── hero-image.jpg      # Hero section background image (placeholder)
 ├── banner.jpg          # Page banner background image (placeholder)
@@ -61,10 +64,10 @@ websit/
 - **Our Mission:** Company mission statement and values
 - **Our Vision:** Long-term vision and goals
 - **Our Leadership Team:** Four key team members with roles and descriptions
-  - John Doe - Chief Executive Officer
-  - Sarah Johnson - Chief Operations Officer
-  - Michael Chen - Head of Product Development
-  - Emily Rodriguez - Chief Financial Officer
+   - Disego Letsoalo - Chief Executive Officer
+   - Joseph Mnisi - Chief Operations Officer
+   - Thato Mnisi - Head of Product Development
+   - Matshweo Hlaka - Chief Financial Officer
 
 **HTML Structure:** Uses semantic HTML with `<article>` tags for content sections and individual `<div class="team-member">` cards for team members.
 
@@ -75,11 +78,13 @@ websit/
 
 **Sections:**
 - **What We Offer:** Introduction to services
-- **Services Grid:** Four service cards in a 2x2 grid layout
-  - Service 1 (customizable)
-  - Service 2 (customizable)
-  - Service 3 (customizable)
-  - Service 4 (customizable)
+- **Services Grid:** Six service cards in a responsive grid layout
+   - Leak Detection & Pipe Repairs
+   - Drain Cleaning & Blockage Removal
+   - Geyser & Water Heater Installation / Repair
+   - Bathroom & Kitchen Plumbing Installations
+   - Emergency Plumbing Services
+   - Water Supply & Pressure Management
 - **Why Choose Us?** Benefits and competitive advantages
   - Key reasons listed with bullet points
 - **Call-to-Action Box:** Link to enquiry form
@@ -115,14 +120,14 @@ websit/
 ### 5. Contact Page (contact.html)
 **Purpose:** Provides complete contact information and a general contact form for visitors.
 
-**Office Locations (4 Global Offices):**
+**Office Locations (4 offices):**
 
 | Location | Address | Contact |
 |----------|---------|---------|
-| **Headquarters** | 123 Business Avenue, New York, NY 10001, USA | +1 (555) 123-4567, info@masepa.com |
-| **Regional Office** | 456 Commerce Drive, London, UK | +44 (20) 1234 5678, london@masepa.com |
-| **Asia Pacific Office** | 789 Enterprise Boulevard, Singapore | +65 6789 0123, apac@masepa.com |
-| **Support Center** | 321 Service Plaza, Sydney, Australia | +61 (2) 1234 5678, support@masepa.com |
+| **Headquarters** | 15 Bodenstein Street, Polokwane Central, South Africa | +27 (15) 123-4567, info@masepaplumbing.com |
+| **Regional Office** | 88 Thabo Mbeki Drive, Seshego Industrial Area, South Africa | +27 (15) 002-6789, Seshego@masepaplumbing.com |
+| **Polokwane Office** | 22 Nelson Mandela Drive, Polokwane CBD, South Africa | +27 (10) 111-2345, apac@masepa.com |
+| **Support Center** | See `contact.html` for the current address and contact details | See `contact.html` |
 
 **Contact Form Fields:**
 - Full Name (required)
@@ -131,13 +136,13 @@ websit/
 - Subject (required)
 - Message (required)
 
-**Maps Section:** Four placeholder map frames ready for Google Maps iframe integration
+**Maps Section:** Embedded Google Maps frames for the listed locations
 
 **Features:**
 - Location cards with clickable phone and email links
 - Business hours for each location
 - Responsive grid layout
-- Map placeholders with integration instructions
+- Embedded map frames for location guidance
 
 ---
 
@@ -168,6 +173,7 @@ Each HTML file includes:
 - **Consistent formatting** across all files
 
 ### CSS Organization
+- Shared stylesheet: `images/CSS/style.css`
 - **Global Styles** section (body, fonts)
 - **Component sections** with organized comments
 - **Responsive Design** with media queries
@@ -406,7 +412,7 @@ Currently posts to "#" - integration needed:
 - All files use UTF-8 character encoding
 - Line endings: LF (Unix style)
 - Indentation: 4 spaces (not tabs)
-- CSS is embedded in each HTML file (separate stylesheet optional)
+- CSS is centralized in `images/CSS/style.css` and linked from every HTML page
 - JavaScript: Not used (pure HTML/CSS solution)
 
 ---

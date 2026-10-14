@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags for character encoding and responsive design -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | The Masepa Industry</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Legacy contact-page styles are duplicated in CSS/style.css. -->
+    <!--
+        /* ============================================
+           Global Styles
+           ============================================ */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        
+        /* ============================================
+           Header and Navigation Styles
+           ============================================ */
+        .logo-img {
+            max-width: 250px;
+            height: auto;
+        }
+        
+        .site-header {
+            background-color: #f8f9fa;
+            padding: 20px 30px;
+            border-bottom: 1px solid #dee2e6;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .main-nav {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .main-nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .main-nav a:hover {
+            color: #0066cc;
+        }
+        
+        /*Page Title Banner Styles*/
+          
+        .page-title {
+            background: linear-gradient(rgba(0, 102, 204, 0.7), rgba(0, 102, 204, 0.7)), url('banner.jpg') center/cover;
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            min-height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .page-title h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+        
+        
+           /* Main Content Styles */
+           
+        .content {
+            padding: 50px 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .content h2 {
+            color: #333;
+            font-size: 1.8em;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #0066cc;
+            padding-bottom: 10px;
+        }
+        
+        .content p {
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        /* ============================================
+           Contact Wrapper Layout
+           ============================================ */
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        /* ============================================
+           Location Cards Grid
+           ============================================ */
+        .locations-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        /* ============================================
+           Location Card Styles
+           ============================================ */
+        .location-card {
+            background-color: #f8f9fa;
+            padding: 25px;
+            border-radius: 5px;
+            border-left: 4px solid #0066cc;
+            transition: box-shadow 0.3s ease;
+        }
+        
+        .location-card:hover {
+            box-shadow: 0 4px 12px rgba(0, 102, 204, 0.15);
+        }
+        
+        .location-card h3 {
+            color: #0066cc;
+            margin: 0 0 15px 0;
+            font-size: 1.1em;
+        }
+        
+        .location-card p {
+            margin: 8px 0;
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .location-card strong {
+            display: block;
+            margin-top: 10px;
+            color: #333;
+        }
+        
+        .location-card a {
+            color: #0066cc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .location-card a:hover {
+            color: #004a99;
+        }
+        
+        /* ============================================
+           Contact Form Styles
+           ============================================ */
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+            font-weight: 500;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="phone"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            font-size: 1em;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+        
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="phone"]:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #0066cc;
+            box-shadow: 0 0 5px rgba(0, 102, 204, 0.3);
+        }
+        
+        /* ============================================
+           Submit Button Styles
+           ============================================ */
+        button {
+            background-color: #0066cc;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 4px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        button:hover {
+            background-color: #004a99;
+        }
+        
+        /* ============================================
+           Required Field Indicator
+           ============================================ */
+        .required {
+            color: #ff6b6b;
+        }
+        
+        /* ============================================
+           Maps Section Styles
+           ============================================ */
+        .maps-section {
+            width: 100%;
+            margin-top: 50px;
+        }
+        
+        .maps-section h2 {
+            text-align: center;
+        }
+        
+        .maps-section > p {
+            text-align: center;
+            color: #666;
+        }
+        
+        .maps-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        /* ============================================
+           Map Frame Placeholder Styles
+           ============================================ */
+        .map-frame {
+            background-color: #e9ecef;
+            border-radius: 5px;
+            overflow: hidden;
+            aspect-ratio: 16/9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-weight: bold;
+            border: 1px solid #dee2e6;
+        }
+        
+        /* ============================================
+           Responsive Design
+           ============================================ */
+        @media (max-width: 900px) {
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+            
+            .locations-section {
+                grid-template-columns: 1fr;
+            }
+            
+            .maps-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* ============================================
+           Footer Styles
+           ============================================ */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+    -->
+</head>
+<body>
+    <!-- ============================================
+         HEADER AND NAVIGATION
+         ============================================ -->
+    <header class="site-header">
+        <!-- Logo container with link to homepage -->
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="logo.png" alt="The Masepa Industry Logo" class="logo-img">
+            </a>
+        </div>
+        
+        <!-- Main navigation menu -->
+        <nav>
+            <ul class="main-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="enquiry.html">Enquiry</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ============================================
+         PAGE TITLE BANNER
+         ============================================ -->
+    <section class="page-title">
+        <h1>Contact Us</h1>
+    </section>
+
+    <!-- ============================================
+         MAIN CONTENT AREA
+         ============================================ -->
+    <main class="content">
+        <!-- Contact Information and Form Section -->
+        <div class="contact-wrapper">
+            <!-- Office Locations Section -->
+            <section class="contact-info">
+                <h2>Our Locations</h2>
+                
+                <!-- Locations Grid with 4 Office Locations -->
+                <div class="locations-section">
+                    <!-- Location 1: Headquarters -->
+                    <article class="location-card">
+                        <h3>Headquarters</h3>
+                        <p>15 Bodenstein Street</p>
+                        <p>Polokwane central</p>
+                        <p>South Africa</p>
+                        <strong>Phone:</strong>
+                        <p><a href="tel:+27151234567">+27 (15) 123-4567</a></p>
+                        <strong>Email:</strong>
+                        <p><a href="mailto:info@masepaplumbing.com">info@masepaplumbing.com</a></p>
+                        <strong>Hours:</strong>
+                        <p>Monday - Friday: 9:00 AM - 6:00 PM SAST</p>
+                    </article>
+
+                    <!-- Location 2: Regional Office -->
+                    <article class="location-card">
+                        <h3>Regional Office</h3>
+                        <p>88 Thabo Mbeki Drive</p>
+                        <p>Seshego Industrial Area</p>
+                        <p>South Africa</p>
+                        <strong>Phone:</strong>
+                        <p><a href="tel:+27 (15) 002-6789">+27 (15) 002-6789</a></p>
+                        <strong>Email:</strong>
+                        <p><a href="mailto:Seshego@masepaplumbing.com">Seshego@masepaplumbing.com</a></p>
+                        <strong>Hours:</strong>
+                        <p>Monday - Friday: 9:00 AM - 6:00 PM SAST</p>
+                    </article>
+
+                    <!-- Location 3: Polokwane Office -->
+                    <article class="location-card">
+                        <h3>Polokwane Office</h3>
+                        <p>22 Nelson Mandela Drive</p>
+                        <p>Polokwane CBD</p>
+                        <p>Polokwane, 0699</p>
+                        <p>South Africa</p>
+                        <strong>Phone:</strong>
+                        <p><a href="tel:+27 (10) 111-2345">+27 (10) 111-2345</a></p>
+                        <strong>Email:</strong>
+                        <p><a href="mailto:apac@masepa.com">apac@masepa.com</a></p>
+                        <strong>Hours:</strong>
+                        <p>Monday - Friday: 8:30 AM - 5:30 PM SGT</p>
+                    </article>
+
+                    <!-- Location 4: Support Center -->
+                    <article class="location-card">
+                        <h3>Support Center</h3>
+                        <p>45 Church Street</p>
+                        <p>Tzaneen, 0850</p>
+                        <p>South Africa</p>
+                        <strong>Phone:</strong>
+                        <p><a href="tel:+27 (15) 307-7890">+27 (15) 307-7890</a></p>
+                        <strong>Email:</strong>
+                        <p><a href="mailto:support@masepaplumbing.com">support@masepaplumbing.com</a></p>
+                        <strong>Hours:</strong>
+                        <p>Monday - Friday: 8:00 AM - 6:00 PM AEDT</p>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Contact Form Section -->
+            <section>
+                <h2>Send us a Message</h2>
+                <p>
+                    Have a question or comment? We'd love to hear from you. Fill out the form below 
+                    and we'll get back to you as soon as possible.
+                </p>
+
+                <!-- Contact Form -->
+                <form method="POST" action="#">
+                    <!-- Full Name Field -->
+                    <div class="form-group">
+                        <label for="name">Full Name <span class="required">*</span></label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <!-- Email Address Field -->
+                    <div class="form-group">
+                        <label for="email">Email Address <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <!-- Phone Number Field -->
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="phone" id="phone" name="phone">
+                    </div>
+
+                    <!-- Subject Field -->
+                    <div class="form-group">
+                        <label for="subject">Subject <span class="required">*</span></label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+
+                    <!-- Message Textarea -->
+                    <div class="form-group">
+                        <label for="message">Message <span class="required">*</span></label>
+                        <textarea id="message" name="message" required placeholder="Please share your message..."></textarea>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit">Send Message</button>
+                </form>
+            </section>
+        </div>
+
+        <!-- ============================================
+             MAPS SECTION
+             ============================================ -->
+        <section class="maps-section">
+            <h2>Our Office Locations on Map</h2>
+            <p>Replace these placeholders with actual embedded maps from Google Maps or similar service.</p>
+            
+            <!-- Maps Container with 4 Maps -->
+            <div class="maps-container">
+                <!-- Map 1: New York Headquarters -->
+                <div class="map-frame">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3647.3112531906586!2d29.45222999999999!3d-23.914030000000007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ec6d788710b5c95%3A0xd735ceb83f17fc96!2s15%20Bodenstein%20St%2C%20Polokwane%20Central%2C%20Polokwane%2C%200700!5e0!3m2!1sen!2sza!4v1786615875677!5m2!1sen!2sza" width="600" height="450" class="map-frame" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                    <!-- Map Placeholder - New York Office -->
+                    </iframe>
+                </div>
+                
+                <!-- Map 2: London Regional Office -->
+                <div class="map-frame">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d14599.026772604613!2d30.145247022827395!3d-23.82724947222602!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1s45%20Church%20Street%2C%20Tzaneen%2C%200850!5e0!3m2!1sen!2sza!4v1786572119620!5m2!1sen!2sza" width="600" height="450" class="map-frame" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin">
+                   <!-- Map Placeholder - London Office -->
+                    </iframe>
+                </div>
+
+                <!-- Map 3: Singapore Asia Pacific Office -->
+                <div class="map-frame">
+                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3647.3348399624306!2d29.440459100000005!3d-23.91319439999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ec6d81f9a6a812f%3A0xed4cedc84597b59!2s22%20Nelson%20Mandela%20Dr%2C%20Nirvana%2C%20Polokwane%2C%200700!5e0!3m2!1sen!2sza!4v1786615543691!5m2!1sen!2sza" width="600" height="450" class="map-frame" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                    <!-- Map Placeholder - Singapore Office -->
+                </div>
+
+                <!-- Map 4: Sydney Support Center -->
+                <div class="map-frame">
+                     <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d29197.036184236295!2d30.164784150000003!3d-23.831769649999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1s45%20church%20street%20tzaneen%200850!5e0!3m2!1sen!2sza!4v1786615656182!5m2!1sen!2sza" width="600" height="450" class="map-frame" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                    <!-- Map Placeholder - Sydney Office -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer>
+        <p>&copy; 2026 The Masepa Industry. All rights reserved.</p>
+    </footer>
+</body>
+</html>
