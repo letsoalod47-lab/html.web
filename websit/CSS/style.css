@@ -724,14 +724,6 @@ footer p {
 		list-style: none;
 	}
 
-	.menu-toggle::-webkit-details-marker {
-		display: none;
-	}
-
-	.menu-toggle::marker {
-		content: "";
-	}
-
 	.menu-toggle span {
 		width: 20px;
 		height: 2px;
@@ -740,15 +732,15 @@ footer p {
 		transition: transform 160ms ease, opacity 160ms ease;
 	}
 
-	.site-nav[open] .menu-toggle span:first-child {
+	.site-nav.is-open .menu-toggle span:first-child {
 		transform: translateY(7px) rotate(45deg);
 	}
 
-	.site-nav[open] .menu-toggle span:nth-child(2) {
+	.site-nav.is-open .menu-toggle span:nth-child(2) {
 		opacity: 0;
 	}
 
-	.site-nav[open] .menu-toggle span:last-child {
+	.site-nav.is-open .menu-toggle span:last-child {
 		transform: translateY(-7px) rotate(-45deg);
 	}
 
@@ -777,7 +769,7 @@ footer p {
 		font-size: 0.94rem;
 	}
 
-	.site-nav[open] > .main-nav {
+	.site-nav.is-open > .main-nav {
 		display: flex;
 	}
 }

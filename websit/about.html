@@ -7,6 +7,7 @@
     <title>About Us | The Masepa Industry</title>
     
     <link rel="stylesheet" href="CSS/style.css">
+    <script src="menu.js" defer></script>
 </head>
 <body>
     <!-- ============================================
@@ -21,20 +22,20 @@
         </div>
         
         <!-- Main navigation menu -->
-        <details class="site-nav">
-            <summary class="menu-toggle" aria-label="Toggle navigation menu">
+        <nav class="site-nav" aria-label="Main navigation">
+            <button class="menu-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-nav">
                 <span></span>
                 <span></span>
                 <span></span>
-            </summary>
-            <ul class="main-nav">
+            </button>
+            <ul class="main-nav" id="main-nav">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html" aria-current="page">About Us</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="enquiry.html">Enquiry</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
-        </details>
+        </nav>
     </header>
 
     <!-- ============================================
