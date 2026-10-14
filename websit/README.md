@@ -30,12 +30,11 @@ websit/
 ├── services.html       # Services/Products page
 ├── enquiry.html        # Product/Service Enquiry form
 ├── contact.html        # Contact information and form
-├── images/
-│   └── CSS/
-│       └── style.css   # Shared stylesheet for all pages
+├── CSS/
+│   └── style.css       # Shared stylesheet for all pages
+├── images/             # Service and hero images
 ├── logo.png            # Company logo (placeholder)
-├── hero-image.jpg      # Hero section background image (placeholder)
-├── banner.jpg          # Page banner background image (placeholder)
+├── menu.js             # Mobile navigation toggle behavior
 └── README.md           # This documentation file
 ```
 
@@ -173,7 +172,7 @@ Each HTML file includes:
 - **Consistent formatting** across all files
 
 ### CSS Organization
-- Shared stylesheet: `images/CSS/style.css`
+- Shared stylesheet: `CSS/style.css`
 - **Global Styles** section (body, fonts)
 - **Component sections** with organized comments
 - **Responsive Design** with media queries
@@ -198,6 +197,87 @@ All pages contain a consistent navigation menu with links to:
 - Call-to-action buttons link to enquiry form
 - Location cards include clickable email and phone links
 - "Why Choose Us" section links to contact page
+
+### Responsive Navigation Code Reference (HTML and CSS)
+
+The navigation markup is shared by `index.html`, `about.html`, `services.html`,
+`enquiry.html`, and `contact.html`. The active page's link includes
+`aria-current="page"`.
+
+```html
+<nav class="site-nav" aria-label="Main navigation">
+    <button class="menu-toggle"
+            type="button"
+            aria-label="Toggle navigation menu"
+            aria-expanded="false"
+            aria-controls="main-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <ul class="main-nav" id="main-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="enquiry.html">Enquiry</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+```
+
+In `CSS/style.css`, the default navigation displays the links in a row and
+hides the menu button:
+
+```css
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-toggle {
+    display: none;
+}
+```
+
+At tablet and laptop widths, the logo is above a centered row of navigation
+links. On narrow screens, the button is shown and the links are hidden until
+the navigation receives the `is-open` class:
+
+```css
+@media (min-width: 761px) and (max-width: 1440px) {
+    .site-header {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .site-nav {
+        align-self: center;
+    }
+}
+
+@media (max-width: 760px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .site-nav > .main-nav {
+        display: none;
+        flex-direction: column;
+    }
+
+    .site-nav.is-open > .main-nav {
+        display: flex;
+    }
+}
+```
+
+The mobile button's open/close behavior is implemented in `menu.js`; its
+JavaScript source is intentionally not reproduced in this reference.
 
 ---
 
@@ -410,10 +490,28 @@ Currently posts to "#" - integration needed:
 ## Developer Notes
 
 - All files use UTF-8 character encoding
-- Line endings: LF (Unix style)
+- Line endings follow the repository configuration
 - Indentation: 4 spaces (not tabs)
-- CSS is centralized in `images/CSS/style.css` and linked from every HTML page
-- JavaScript: Not used (pure HTML/CSS solution)
+- CSS is centralized in `CSS/style.css` and linked from every HTML page
+- `menu.js` provides the mobile navigation toggle
+
+---
+
+## Changelog
+
+### Version 1.2 — 2026-10-14
+- Fixed the tablet and laptop navigation so the links remain visible outside the mobile menu.
+- Kept the collapsible hamburger menu for narrow mobile screens.
+- Added an HTML/CSS navigation reference to this README.
+- Updated the documented file structure and stylesheet path.
+
+### Version 1.1 — 2026-10-14
+- Restyled the header at tablet and laptop widths to place the logo above centered navigation links.
+- Adjusted responsive menu breakpoints to distinguish mobile layouts from wider screens.
+
+### Version 1.0 — 2026-08-12
+- Documented the initial multi-page company website, including home, about, services, enquiry, and contact pages.
+- Established shared styling, responsive layouts, navigation, and customer enquiry/contact forms.
 
 ---
 
@@ -425,6 +523,6 @@ For questions or modifications, refer to the inline comments in each HTML file o
 
 ---
 
-**Last Updated:** 2026-08-12  
-**Version:** 1.0  
+**Last Updated:** 2026-10-14  
+**Version:** 1.2  
 **Status:** Ready for Deployment
