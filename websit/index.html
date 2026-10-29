@@ -7,6 +7,7 @@
     <title>The Masepa Industry | Home</title>
     
     <link rel="stylesheet" href="CSS/style.css">
+    <script src="menu.js" defer></script>
 </head>
 <body>
     <!-- ============================================
@@ -21,9 +22,14 @@
         </div>
         
         <!-- Main navigation menu -->
-        <nav>
-            <ul class="main-nav">
-                <li><a href="index.html">Home</a></li>
+        <nav class="site-nav" aria-label="Main navigation">
+            <button class="menu-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-nav">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="main-nav" id="main-nav">
+                <li><a href="index.html" aria-current="page">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="enquiry.html">Enquiry</a></li>
@@ -36,21 +42,22 @@
          HERO SECTION
          ============================================ -->
     <section class="hero-section">
+        <p class="eyebrow">Trusted plumbing across Limpopo</p>
         <!-- Main heading and introductory content -->
-        <h1>Welcome to The Masepa Industry</h1>
+        <h1>Reliable plumbing. Done right.</h1>
 
         <!-- slogan -->
-        <p>Let us take care of your wet problems with our expert plumbing services.</p>
+        <p>From urgent repairs to complete installations, our experienced team keeps your water flowing and your property protected.</p>
         
         <!-- Call-to-action button linking to enquiry form -->
-        <a href="enquiry.html" class="cta-button">Get Started</a>
+        <a href="enquiry.html" class="cta-button">Request a service</a>
     </section>
 
     <!-- ============================================
          INTRODUCTION SECTION
          ============================================ -->
     <section class="intro-section">
-        <h2>About Our Company</h2>
+        <h2>Plumbing you can count on</h2>
         <p>
             At The Masepa Industry, we provide reliable plumbing services for homes, businesses, and communities.
             From fixing leaks and unclogging drains to installing pipes, geysers, and full plumbing systems — we do it all.
@@ -58,6 +65,36 @@
         <p>We’ve been in the business for many years, and our main goal is simple: do great work and treat every customer like family.
             We focus on quality, honesty, and showing up when you need us.
             At Masepa Plumbing, we’re not just fixing pipes — we’re building trust and long-term relationships with the people we serve.</p>
+    </section>
+
+    <section class="home-services" aria-labelledby="home-services-title">
+        <div class="home-services-heading">
+            <h2 id="home-services-title">How we can help</h2>
+            <a href="services.html">Explore all services &rarr;</a>
+        </div>
+        <div class="home-services-grid">
+            <article class="home-service-card">
+                <img src="images/service1.jpg" alt="Plumber inspecting pipework for a leak" loading="lazy">
+                <div>
+                    <h3>Leak detection &amp; repairs</h3>
+                    <p>Find and fix leaks quickly, with careful repairs that help prevent further damage.</p>
+                </div>
+            </article>
+            <article class="home-service-card">
+                <img src="images/service2.jpg" alt="Professional drain cleaning equipment" loading="lazy">
+                <div>
+                    <h3>Drain cleaning</h3>
+                    <p>Clear stubborn blockages and get your sinks, drains and toilets flowing again.</p>
+                </div>
+            </article>
+            <article class="home-service-card">
+                <img src="images/service5.png" alt="Emergency plumbing service" loading="lazy">
+                <div>
+                    <h3>Emergency plumbing</h3>
+                    <p>Get help with urgent leaks, burst pipes and other unexpected plumbing problems.</p>
+                </div>
+            </article>
+        </div>
     </section>
 
     <!-- ============================================
