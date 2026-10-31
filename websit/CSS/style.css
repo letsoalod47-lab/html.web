@@ -582,6 +582,33 @@ select:focus {
 	gap: 18px;
 }
 
+.whatsapp-contact {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 12px;
+	margin: 24px 0 0;
+}
+
+.whatsapp-link {
+	display: inline-flex;
+	min-height: 48px;
+	align-items: center;
+	justify-content: center;
+	padding: 12px 20px;
+	border-radius: 8px;
+	background: #168b52;
+	color: var(--white);
+	font-weight: 750;
+	text-decoration: none;
+	transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.whatsapp-link:hover {
+	transform: translateY(-2px);
+	background: #107443;
+}
+
 .required {
 	color: #d65e3e;
 }
