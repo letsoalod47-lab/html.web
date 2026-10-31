@@ -119,7 +119,7 @@ textarea:focus-visible {
 	overflow: hidden;
 	background:
 		linear-gradient(90deg, rgba(7, 27, 49, 0.94) 0%, rgba(10, 40, 69, 0.82) 50%, rgba(10, 40, 69, 0.3) 100%),
-		url("../images/service4.jpg") center 48% / cover;
+		url("../images/bathroom-kitchen-plumbing-installation.jpg") center 48% / cover;
 	color: var(--white);
 }
 
