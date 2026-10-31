@@ -406,6 +406,43 @@ button:hover {
 	margin: 34px 0 48px;
 }
 
+.service-filters {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	margin-top: 28px;
+}
+
+.service-filter {
+	min-height: 42px;
+	padding: 9px 16px;
+	border: 1px solid var(--line);
+	border-radius: 999px;
+	background: var(--white);
+	box-shadow: none;
+	color: var(--ink);
+	font-size: 0.92rem;
+	font-weight: 700;
+}
+
+.service-filter:hover,
+.service-filter[aria-pressed="true"] {
+	border-color: var(--navy);
+	background: var(--navy);
+	box-shadow: none;
+	color: var(--white);
+}
+
+.service-filter-status {
+	margin: 12px 0 0;
+	color: var(--muted);
+	font-size: 0.9rem;
+}
+
+.service-card[hidden] {
+	display: none;
+}
+
 .service-card {
 	display: flex;
 	overflow: hidden;

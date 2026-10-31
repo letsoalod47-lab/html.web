@@ -8,6 +8,7 @@
     
     <link rel="stylesheet" href="CSS/style.css">
     <script src="menu.js" defer></script>
+    <script src="services.js" defer></script>
 </head>
 <body>
     <!-- ============================================
@@ -59,10 +60,18 @@
             </p>
         </article>
 
+        <div class="service-filters" role="group" aria-label="Filter services by type" data-service-filters>
+            <button class="service-filter" type="button" data-service-filter="all" aria-pressed="true">All services</button>
+            <button class="service-filter" type="button" data-service-filter="repairs" aria-pressed="false">Repairs</button>
+            <button class="service-filter" type="button" data-service-filter="installations" aria-pressed="false">Installations</button>
+            <button class="service-filter" type="button" data-service-filter="emergency" aria-pressed="false">Emergency</button>
+        </div>
+        <p class="service-filter-status" data-service-filter-status role="status" aria-live="polite">Showing all 6 services</p>
+
         <!-- Services Grid -->
         <section class="services-grid">
             <!-- Service Card 1: Leak Detection & Pipe Repairs -->
-            <div class="service-card">
+            <div class="service-card" data-service-categories="repairs">
                 <img src="images/service1.jpg" alt="Pipe leak detection and repair service">
                 <div class="service-card-content">
                     <h3>Leak Detection & Pipe Repairs</h3>
@@ -73,7 +82,7 @@
             </div>
 
             <!-- Service Card 2: Drain Cleaning & Blockage Removal -->
-            <div class="service-card">
+            <div class="service-card" data-service-categories="repairs">
                 <img src="images/service2.jpg" alt="Professional drain cleaning service">
                 <div class="service-card-content">
                     <h3>Drain Cleaning & Blockage Removal</h3>
@@ -84,7 +93,7 @@
             </div>
 
             <!-- Service Card 3: Geyser & Water Heater Installation / Repair -->
-            <div class="service-card">
+            <div class="service-card" data-service-categories="repairs installations">
                 <img src="images/service3.jpg" alt="Geyser and water heater installation">
                 <div class="service-card-content">
                     <h3>Geyser & Water Heater Installation / Repair</h3>
@@ -95,7 +104,7 @@
             </div>
 
             <!-- Service Card 4: Bathroom & Kitchen Plumbing Installations -->
-            <div class="service-card">
+            <div class="service-card" data-service-categories="installations">
                 <img src="images/service4.jpg" alt="Bathroom and kitchen plumbing installation">
                 <div class="service-card-content">
                     <h3>Bathroom & Kitchen Plumbing Installations</h3>
@@ -106,7 +115,7 @@
             </div>
 
             <!-- Service Card 5: Emergency Plumbing Services -->
-            <div class="service-card">
+            <div class="service-card" data-service-categories="emergency">
                 <img src="images/service5.png" alt="24/7 emergency plumbing services">
                 <div class="service-card-content">
                     <h3>Emergency Plumbing Services</h3>
@@ -117,7 +126,7 @@
             </div>
 
             <!-- Service Card 6: Water Supply & Pressure Management -->
-            <div class="service-card">
+            <div class="service-card" data-service-categories="installations">
                 <img src="images/service6.png" alt="Water supply and pressure management systems">
                 <div class="service-card-content">
                     <h3>Water Supply & Pressure Management</h3>
