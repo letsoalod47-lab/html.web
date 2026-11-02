@@ -69,6 +69,21 @@
             </p>
         </article>
 
+        <div class="service-toolbar">
+            <label class="service-search" for="service-search">
+                <span class="sr-only">Search services</span>
+                <input id="service-search" type="search" data-service-search placeholder="Search services..." aria-label="Search services">
+            </label>
+            <label class="service-sort" for="service-sort">
+                <span>Sort by</span>
+                <select id="service-sort" data-service-sort aria-label="Sort services">
+                    <option value="name-asc">Name A–Z</option>
+                    <option value="name-desc">Name Z–A</option>
+                    <option value="category">Category</option>
+                </select>
+            </label>
+        </div>
+
         <div class="service-filters" role="group" aria-label="Filter services by type" data-service-filters>
             <button class="service-filter" type="button" data-service-filter="all" aria-pressed="true">All services</button>
             <button class="service-filter" type="button" data-service-filter="repairs" aria-pressed="false">Repairs</button>
@@ -77,74 +92,7 @@
         </div>
         <p class="service-filter-status" data-service-filter-status role="status" aria-live="polite">Showing all 6 services</p>
 
-        <!-- Services Grid -->
-        <section class="services-grid">
-            <!-- Service Card 1: Leak Detection & Pipe Repairs -->
-            <div class="service-card" data-service-categories="repairs">
-                <img src="images/leak-detection-pipe-repair.jpg" alt="Pipe leak detection and repair service" loading="lazy" decoding="async">
-                <div class="service-card-content">
-                    <h3>Leak Detection & Pipe Repairs</h3>
-                    <p>
-                        Water leaks waste money and can damage your walls, ceilings, and foundation. We use modern leak detection tools to find hidden leaks without breaking unnecessary walls. Our team repairs burst pipes, dripping taps, and leaking joints quickly and cleanly. We work with copper, PVC, and PPR piping to make sure the fix lasts.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Service Card 2: Drain Cleaning & Blockage Removal -->
-            <div class="service-card" data-service-categories="repairs">
-                <img src="images/drain-cleaning-blockage-removal.jpg" alt="Professional drain cleaning service" loading="lazy" decoding="async">
-                <div class="service-card-content">
-                    <h3>Drain Cleaning & Blockage Removal</h3>
-                    <p>
-                        Blocked drains and toilets can disrupt your whole day. We provide professional drain cleaning using high-pressure water jetting and drain rods to clear grease, hair, roots, and other blockages. We also inspect drains with cameras to find the root cause and prevent future problems.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Service Card 3: Geyser & Water Heater Installation / Repair -->
-            <div class="service-card" data-service-categories="repairs installations">
-                <img src="images/geyser-water-heater-installation.jpg" alt="Geyser and water heater installation" loading="lazy" decoding="async">
-                <div class="service-card-content">
-                    <h3>Geyser & Water Heater Installation / Repair</h3>
-                    <p>
-                        No hot water? We install, repair, and maintain all types of electric and solar geysers. Our service includes new geyser installation, thermostat replacement, element repairs, and burst geyser replacement. We also install pressure valves and drip trays to meet SABS safety standards.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Service Card 4: Bathroom & Kitchen Plumbing Installations -->
-            <div class="service-card" data-service-categories="installations">
-                <img src="images/bathroom-kitchen-plumbing-installation.jpg" alt="Bathroom and kitchen plumbing installation" loading="lazy" decoding="async">
-                <div class="service-card-content">
-                    <h3>Bathroom & Kitchen Plumbing Installations</h3>
-                    <p>
-                        Renovating or building? We handle complete plumbing installations for bathrooms and kitchens. This includes installing basins, toilets, showers, mixers, sinks, dishwashers, and water filtration systems. We do both new installations and upgrades, with neat pipework and no leaks.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Service Card 5: Emergency Plumbing Services -->
-            <div class="service-card" data-service-categories="emergency">
-                <img src="images/emergency-plumbing.png" alt="24/7 emergency plumbing services" loading="lazy" decoding="async">
-                <div class="service-card-content">
-                    <h3>Emergency Plumbing Services</h3>
-                    <p>
-                        Plumbing emergencies don't wait for business hours. We offer 24/7 emergency services for burst pipes, major leaks, and blocked sewers. Our rapid response team will minimize water damage and get your plumbing back to normal quickly. We're available nights, weekends, and holidays with competitive emergency rates.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Service Card 6: Water Supply & Pressure Management -->
-            <div class="service-card" data-service-categories="installations">
-                <img src="images/water-pressure-management.png" alt="Water supply and pressure management systems" loading="lazy" decoding="async">
-                <div class="service-card-content">
-                    <h3>Water Supply & Pressure Management</h3>
-                    <p>
-                        Low water pressure or unreliable supply? We install pressure-boosting systems, water tanks, and pressure switches to ensure consistent water pressure throughout your property. We also handle water meter installation, supply line upgrades, and pressure reduction valve installations for optimal water flow and safety.
-                    </p>
-                </div>
-            </div>
-        </section>
+        <section class="services-grid" data-services-grid aria-live="polite"></section>
 
         <section class="faq-section" aria-labelledby="faq-title" data-faq-accordion>
             <h2 id="faq-title">Frequently Asked Questions</h2>
