@@ -30,6 +30,7 @@ The website includes the following key features:
 - Services page with six service categories and clear promotional information.
 - Enquiry form for potential customers to request services or ask questions.
 - Contact page with office details, business information, and contact form.
+- Local SEO with Polokwane-focused page titles and descriptions, consistent primary business contact details, LocalBusiness structured data, and a crawlable sitemap.
 - Shared responsive footer with X, YouTube, Instagram, Facebook, and Threads icons.
 - Green bottom-up hover animation for the footer icons, with reduced-motion preferences respected. The icons are decorative and are not linked to social profiles.
 - Consistent styling across all pages using a shared stylesheet.
