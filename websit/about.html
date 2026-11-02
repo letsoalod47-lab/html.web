@@ -17,6 +17,7 @@
     
     <link rel="stylesheet" href="CSS/style.css">
     <script src="JAVA/menu.js" defer></script>
+    <script src="JAVA/about.js" defer></script>
 </head>
 <body>
     <!-- ============================================
@@ -87,6 +88,28 @@
             </p>
         </article>
 
+        <section class="project-gallery" aria-labelledby="project-gallery-title">
+            <h2 id="project-gallery-title">Project highlights</h2>
+            <div class="gallery-grid">
+                <button class="gallery-item" type="button" data-lightbox-trigger data-image="images/bathroom-kitchen-plumbing-installation.jpg" data-title="Bathroom installation" data-caption="Clean, modern bathroom plumbing installation completed for a residential upgrade.">
+                    <img src="images/bathroom-kitchen-plumbing-installation.jpg" alt="Modern bathroom plumbing installation" loading="lazy" decoding="async">
+                    <span>Bathroom installation</span>
+                </button>
+                <button class="gallery-item" type="button" data-lightbox-trigger data-image="images/geyser-water-heater-installation.jpg" data-title="Geyser upgrade" data-caption="Efficient geyser replacement and safety check for a reliable hot water supply.">
+                    <img src="images/geyser-water-heater-installation.jpg" alt="Geyser installation and maintenance" loading="lazy" decoding="async">
+                    <span>Geyser upgrade</span>
+                </button>
+                <button class="gallery-item" type="button" data-lightbox-trigger data-image="images/drain-cleaning-blockage-removal.jpg" data-title="Drain clearing" data-caption="Fast drain maintenance that restores flow and protects plumbing systems from damage.">
+                    <img src="images/drain-cleaning-blockage-removal.jpg" alt="Drain cleaning and blockage removal" loading="lazy" decoding="async">
+                    <span>Drain clearing</span>
+                </button>
+                <button class="gallery-item" type="button" data-lightbox-trigger data-image="images/emergency-plumbing.png" data-title="Emergency response" data-caption="Urgent repair support designed to reduce downtime and prevent further property damage.">
+                    <img src="images/emergency-plumbing.png" alt="Emergency plumbing repair" loading="lazy" decoding="async">
+                    <span>Emergency response</span>
+                </button>
+            </div>
+        </section>
+
         <!-- Leadership Team Section -->
         <section class="team-section">
             <h2>Our Leadership Team</h2>
@@ -141,6 +164,19 @@
             </div>
         </section>
     </main>
+
+    <div class="lightbox-overlay" data-lightbox hidden>
+        <div class="lightbox-dialog" role="dialog" aria-modal="true" aria-labelledby="lightbox-title">
+            <button class="lightbox-close" type="button" aria-label="Close image preview" data-close-lightbox>&times;</button>
+            <figure class="lightbox-figure">
+                <img class="lightbox-image" src="" alt="" data-lightbox-image>
+                <figcaption>
+                    <strong id="lightbox-title" data-lightbox-title>Project image</strong>
+                    <span data-lightbox-caption></span>
+                </figcaption>
+            </figure>
+        </div>
+    </div>
 
     <!-- ============================================
          FOOTER
