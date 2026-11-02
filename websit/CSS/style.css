@@ -971,6 +971,7 @@ footer {
 	border: 1px solid rgba(255, 255, 255, 0.75);
 	border-radius: 50%;
 	color: var(--white);
+	text-decoration: none;
 }
 
 .social-icon::before {
