@@ -1,13 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-ZA">
 <head>
     <!-- Meta tags for character encoding and responsive design -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | The Masepa Industry</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-src https://www.google.com; form-action 'self' mailto:; upgrade-insecure-requests">
+    <title>Contact a 24/7 Plumber in Polokwane | Masepa</title>
+    <meta name="description" content="Contact The Masepa Industry for 24/7 plumbing services in Polokwane, Limpopo. Call +27 79 113 6319 or email letsoalod47@gmail.com.">
+    <link rel="canonical" href="https://masepaplumbing.com/contact.html">
+    <meta property="og:locale" content="en_ZA">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="The Masepa Industry">
+    <meta property="og:title" content="Contact a 24/7 Plumber in Polokwane | Masepa">
+    <meta property="og:description" content="Contact The Masepa Industry for 24/7 plumbing services in Polokwane, Limpopo. Call +27 79 113 6319 or email letsoalod47@gmail.com.">
+    <meta property="og:url" content="https://masepaplumbing.com/contact.html">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Plumber",
+            "@id": "https://masepaplumbing.com/#plumber",
+            "name": "The Masepa Industry",
+            "url": "https://masepaplumbing.com/",
+            "telephone": "+27791136319",
+            "email": "letsoalod47@gmail.com",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "15 Bodenstein Street",
+                "addressLocality": "Polokwane",
+                "addressRegion": "Limpopo",
+                "addressCountry": "ZA"
+            },
+            "areaServed": {
+                "@type": "City",
+                "name": "Polokwane"
+            },
+            "openingHours": "Mo-Su 00:00-23:59"
+        }
+    </script>
     
     <link rel="stylesheet" href="CSS/style.css">
-    <script src="menu.js" defer></script>
+    <script src="JAVA/menu.js" defer></script>
+    <script src="JAVA/form-validation.js" defer></script>
 </head>
 <body>
     <!-- ============================================
@@ -61,14 +94,14 @@
                     <article class="location-card">
                         <h3>Headquarters</h3>
                         <p>15 Bodenstein Street</p>
-                        <p>Polokwane central</p>
+                        <p>Polokwane Central, Limpopo</p>
                         <p>South Africa</p>
                         <strong>Phone:</strong>
-                        <p><a href="tel:+27151234567">+27 (15) 123-4567</a></p>
+                        <p><a href="tel:+27791136319">+27 79 113 6319</a></p>
                         <strong>Email:</strong>
-                        <p><a href="mailto:info@masepaplumbing.com">info@masepaplumbing.com</a></p>
+                        <p><a href="mailto:letsoalod47@gmail.com">letsoalod47@gmail.com</a></p>
                         <strong>Hours:</strong>
-                        <p>Monday - Friday: 9:00 AM - 6:00 PM SAST</p>
+                        <p>Open 24 hours, every day</p>
                     </article>
 
                     <!-- Location 2: Regional Office -->
@@ -125,36 +158,38 @@
                 </p>
 
                 <!-- Contact Form -->
-                <form method="POST" action="#">
+                <form action="mailto:letsoalod47@gmail.com" method="post" enctype="text/plain" data-email-form data-recipient="letsoalod47@gmail.com" data-email-subject="Website contact message">
                     <!-- Full Name Field -->
                     <div class="form-group">
                         <label for="name">Full Name <span class="required">*</span></label>
-                        <input type="text" id="name" name="name" required>
+                        <input type="text" id="name" name="name" minlength="2" maxlength="100" autocomplete="name" required>
                     </div>
 
                     <!-- Email Address Field -->
                     <div class="form-group">
                         <label for="email">Email Address <span class="required">*</span></label>
-                        <input type="email" id="email" name="email" required>
+                        <input type="email" id="email" name="email" maxlength="254" autocomplete="email" required>
                     </div>
 
                     <!-- Phone Number Field -->
                     <div class="form-group">
                         <label for="phone">Phone Number</label>
-                        <input type="phone" id="phone" name="phone">
+                        <input type="tel" id="phone" name="phone" pattern="\+?[0-9\s\(\)\-]{7,19}" title="Enter a phone number using at least 7 digits and only +, spaces, parentheses, or hyphens." autocomplete="tel">
                     </div>
 
                     <!-- Subject Field -->
                     <div class="form-group">
                         <label for="subject">Subject <span class="required">*</span></label>
-                        <input type="text" id="subject" name="subject" required>
+                        <input type="text" id="subject" name="subject" minlength="3" maxlength="120" required>
                     </div>
 
                     <!-- Message Textarea -->
                     <div class="form-group">
                         <label for="message">Message <span class="required">*</span></label>
-                        <textarea id="message" name="message" required placeholder="Please share your message..."></textarea>
+                        <textarea id="message" name="message" minlength="10" maxlength="2000" required placeholder="Please share your message..."></textarea>
                     </div>
+
+                    <p class="form-status" data-form-status role="status" aria-live="polite"></p>
 
                     <!-- Submit Button -->
                     <button type="submit">Send Message</button>
@@ -166,35 +201,29 @@
              MAPS SECTION
              ============================================ -->
         <section class="maps-section">
-            <h2>Our Office Locations on Map</h2>
-            <p>Replace these placeholders with actual embedded maps from Google Maps or similar service.</p>
+            <h2>Our locations on the map</h2>
+            <p>Find The Masepa Industry in Polokwane and nearby areas.</p>
             
             <!-- Maps Container with 4 Maps -->
             <div class="maps-container">
-                <!-- Map 1: New York Headquarters -->
+                <!-- Map 1: Headquarters -->
                 <div class="map-frame">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3647.3112531906586!2d29.45222999999999!3d-23.914030000000007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ec6d788710b5c95%3A0xd735ceb83f17fc96!2s15%20Bodenstein%20St%2C%20Polokwane%20Central%2C%20Polokwane%2C%200700!5e0!3m2!1sen!2sza!4v1786615875677!5m2!1sen!2sza" width="600" height="450" class="map-frame" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-                    <!-- Map Placeholder - New York Office -->
-                    </iframe>
+                    <iframe title="Map showing Masepa Industry headquarters in Polokwane" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3647.3112531906586!2d29.45222999999999!3d-23.914030000000007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ec6d788710b5c95%3A0xd735ceb83f17fc96!2s15%20Bodenstein%20St%2C%20Polokwane%20Central%2C%20Polokwane%2C%200700!5e0!3m2!1sen!2sza!4v1786615875677!5m2!1sen!2sza" width="600" height="450" class="map-frame" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
                 </div>
                 
-                <!-- Map 2: London Regional Office -->
+                <!-- Map 2: Tzaneen location -->
                 <div class="map-frame">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d14599.026772604613!2d30.145247022827395!3d-23.82724947222602!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1s45%20Church%20Street%2C%20Tzaneen%2C%200850!5e0!3m2!1sen!2sza!4v1786572119620!5m2!1sen!2sza" width="600" height="450" class="map-frame" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin">
-                   <!-- Map Placeholder - London Office -->
-                    </iframe>
+                    <iframe title="Map showing the Masepa Industry Tzaneen location" src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d14599.026772604613!2d30.145247022827395!3d-23.82724947222602!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1s45%20Church%20Street%2C%20Tzaneen%2C%200850!5e0!3m2!1sen!2sza!4v1786572119620!5m2!1sen!2sza" width="600" height="450" class="map-frame" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
                 </div>
 
-                <!-- Map 3: Singapore Asia Pacific Office -->
+                <!-- Map 3: Polokwane location -->
                 <div class="map-frame">
-                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3647.3348399624306!2d29.440459100000005!3d-23.91319439999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ec6d81f9a6a812f%3A0xed4cedc84597b59!2s22%20Nelson%20Mandela%20Dr%2C%20Nirvana%2C%20Polokwane%2C%200700!5e0!3m2!1sen!2sza!4v1786615543691!5m2!1sen!2sza" width="600" height="450" class="map-frame" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-                    <!-- Map Placeholder - Singapore Office -->
+                    <iframe title="Map showing the Masepa Industry Polokwane location" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3647.3348399624306!2d29.440459100000005!3d-23.91319439999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ec6d81f9a6a812f%3A0xed4cedc84597b59!2s22%20Nelson%20Mandela%20Dr%2C%20Nirvana%2C%20Polokwane%2C%200700!5e0!3m2!1sen!2sza!4v1786615543691!5m2!1sen!2sza" width="600" height="450" class="map-frame" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
                 </div>
 
-                <!-- Map 4: Sydney Support Center -->
+                <!-- Map 4: Tzaneen support location -->
                 <div class="map-frame">
-                     <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d29197.036184236295!2d30.164784150000003!3d-23.831769649999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1s45%20church%20street%20tzaneen%200850!5e0!3m2!1sen!2sza!4v1786615656182!5m2!1sen!2sza" width="600" height="450" class="map-frame" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-                    <!-- Map Placeholder - Sydney Office -->
+                    <iframe title="Map showing the Masepa Industry support location in Tzaneen" src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d29197.036184236295!2d30.164784150000003!3d-23.831769649999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1s45%20church%20street%20tzaneen%200850!5e0!3m2!1sen!2sza!4v1786615656182!5m2!1sen!2sza" width="600" height="450" class="map-frame" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
                 </div>
             </div>
         </section>
@@ -204,7 +233,25 @@
          FOOTER
          ============================================ -->
     <footer>
-        <p>&copy; 2026 The Masepa Industry. All rights reserved.</p>
+        <div class="footer-inner">
+            <p>&copy; 2026 The Masepa Industry. All rights reserved.</p>
+            <address class="footer-contact">
+                <span>15 Bodenstein Street, Polokwane, Limpopo, South Africa</span>
+                <a href="tel:+27791136319">+27 79 113 6319</a>
+                <a href="mailto:letsoalod47@gmail.com">letsoalod47@gmail.com</a>
+            </address>
+            <nav class="social-icons" aria-label="Social media">
+                <a class="social-icon social-icon--youtube" href="https://www.youtube.com/@Letzd" target="_blank" rel="noopener noreferrer" aria-label="Visit Masepa Industry on YouTube">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 7.2a2.8 2.8 0 0 0-2-2C18.2 4.7 12 4.7 12 4.7s-6.2 0-8 .5a2.8 2.8 0 0 0-2 2A29 29 0 0 0 1.5 12 29 29 0 0 0 2 16.8a2.8 2.8 0 0 0 2 2c1.8.5 8 .5 8 .5s6.2 0 8-.5a2.8 2.8 0 0 0 2-2 29 29 0 0 0 .5-4.8 29 29 0 0 0-.5-4.8ZM10 15.5v-7l6 3.5-6 3.5Z" /></svg>
+                </a>
+                <a class="social-icon" href="https://www.instagram.com/dizz_letz36/" target="_blank" rel="noopener noreferrer" aria-label="Visit Masepa Industry on Instagram">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.7" cy="6.6" r=".7" fill="currentColor" stroke="none" /></svg>
+                </a>
+                <a class="social-icon social-icon--facebook" href="https://www.facebook.com/share/1aVHk76T3m/" target="_blank" rel="noopener noreferrer" aria-label="Visit Masepa Industry on Facebook">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1v-2c0-.9.3-1.5 1.6-1.5h1.7V3.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.1H7.3V13h2.8v8h3.4Z" /></svg>
+                </a>
+            </nav>
+        </div>
     </footer>
 </body>
 </html>

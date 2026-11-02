@@ -30,6 +30,9 @@ The website includes the following key features:
 - Services page with six service categories and clear promotional information.
 - Enquiry form for potential customers to request services or ask questions.
 - Contact page with office details, business information, and contact form.
+- Local SEO with Polokwane-focused page titles and descriptions, consistent primary business contact details, LocalBusiness structured data, and a crawlable sitemap.
+- Shared responsive footer with X, YouTube, Instagram, Facebook, and Threads icons.
+- Green bottom-up hover animation for the footer icons, with reduced-motion preferences respected. The icons are decorative and are not linked to social profiles.
 - Consistent styling across all pages using a shared stylesheet.
 - Lightweight static website structure suitable for simple hosting and future expansion.
 
@@ -42,19 +45,22 @@ The project was planned and implemented in stages to support structured developm
 - About and Services pages: Company profile and service catalogue sections completed.
 - Enquiry and Contact pages: Forms and business contact information added.
 - Testing and refinement: Responsiveness checks, layout consistency, and final documentation.
+- Footer refinement: Social media icons and a bottom-up hover fill animation added consistently across all pages.
 - Final submission: README documentation and project packaging prepared.
 
 ## Part 1 Details
-This README documents Part 1 of the website project.
+Part 1 established the core plumbing business website using HTML, CSS, and JavaScript. It introduced the main pages and navigation, company and leadership information, service descriptions, enquiry form, and contact information.
 
-Part 1 focuses on the foundation of the website, including:
-- Homepage design and navigation
-- About Us content and business background
-- Services overview and service categories
-- Enquiry page structure
-- Contact page details and layout
+## Part 2 Details
+Part 2 focused on the website's CSS styling. A shared stylesheet defines the color palette, typography, spacing, buttons, page layouts, service cards, contact sections, and visual details used across the pages. Responsive CSS rules adapt the navigation, grids, forms, and other content for desktop, tablet, and mobile screen sizes. Hover, focus, and reduced-motion styles help make interactions clear and comfortable to use.
 
-Part 2 and Part 3 will follow in future submissions and edits as the project continues to expand.
+## Part 3 Details
+Part 3 adds JavaScript interactions and further improvements across the website:
+- Mobile navigation opens and closes with its menu button, closes after a navigation link is selected, and supports the Escape key.
+- Service filters show matching services and announce the number of results. FAQ items behave like an accordion, with only one answer open at a time.
+- Enquiry forms use browser validation, prepare a prefilled email draft, and prevent selecting a preferred date in the past.
+- Selecting an enquiry service displays only the relevant follow-up questions.
+- The shared footer displays X, YouTube, Instagram, Facebook, and Threads icons. Their green hover animation fills upward from the bottom; reduced-motion preferences are respected. The icons are decorative and are not linked to social profiles.
 
 ## Sitemap
 The website structure follows a simple, user-friendly sitemap:
@@ -74,6 +80,7 @@ The website structure follows a simple, user-friendly sitemap:
 The following changelog documents the development and improvement of the website:
 
 - v1.0.0 - 16 October 2026: README documentation created and project overview, sitemap, milestones, and references added.
+- v1.1 - 2 November 2026: Added responsive footer social icons and a bottom-up green hover animation across all pages, with reduced-motion support.
 - v1.0 - Initial website build: Homepage, About Us, Services, Enquiry, and Contact pages created with shared styling and responsive navigation.
 - v0.1 - Initial concept and structure planning: Requirements identified and website layout framework established.
 

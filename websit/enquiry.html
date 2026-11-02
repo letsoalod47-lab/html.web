@@ -1,13 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-ZA">
 <head>
     <!-- Meta tags for character encoding and responsive design -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enquiry | The Masepa Industry</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-src https://www.google.com; form-action 'self' mailto:; upgrade-insecure-requests">
+    <title>Request a Polokwane Plumber | Masepa Industry</title>
+    <meta name="description" content="Request plumbing repairs, installations or 24/7 emergency service in Polokwane, Limpopo. Contact The Masepa Industry by phone or email.">
+    <link rel="canonical" href="https://masepaplumbing.com/enquiry.html">
+    <meta property="og:locale" content="en_ZA">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="The Masepa Industry">
+    <meta property="og:title" content="Request a Polokwane Plumber | Masepa Industry">
+    <meta property="og:description" content="Request plumbing repairs, installations or 24/7 emergency service in Polokwane, Limpopo. Contact The Masepa Industry by phone or email.">
+    <meta property="og:url" content="https://masepaplumbing.com/enquiry.html">
     
     <link rel="stylesheet" href="CSS/style.css">
-    <script src="menu.js" defer></script>
+    <script src="JAVA/menu.js" defer></script>
+    <script src="JAVA/enquiry.js" defer></script>
+    <script src="JAVA/form-validation.js" defer></script>
 </head>
 <body>
     <!-- ============================================
@@ -57,17 +68,17 @@
         </p>
 
         <!-- Enquiry Form -->
-        <form method="POST" action="#">
+        <form action="mailto:letsoalod47@gmail.com" method="post" enctype="text/plain" data-email-form data-recipient="letsoalod47@gmail.com" data-email-subject="Plumbing service enquiry">
             <!-- First Name and Last Name Row -->
             <div class="form-row">
                 <div class="form-group">
                     <label for="first-name">First Name <span class="required">*</span></label>
-                    <input type="text" id="first-name" name="first-name" required>
+                    <input type="text" id="first-name" name="first-name" minlength="2" maxlength="60" autocomplete="given-name" required>
                 </div>
                 
                 <div class="form-group">
                     <label for="last-name">Last Name <span class="required">*</span></label>
-                    <input type="text" id="last-name" name="last-name" required>
+                    <input type="text" id="last-name" name="last-name" minlength="2" maxlength="60" autocomplete="family-name" required>
                 </div>
             </div>
 
@@ -75,50 +86,165 @@
             <div class="form-row">
                 <div class="form-group">
                     <label for="email">Email Address <span class="required">*</span></label>
-                    <input type="email" id="email" name="email" required>
+                    <input type="email" id="email" name="email" maxlength="254" autocomplete="email" required>
                 </div>
                 
                 <div class="form-group">
                     <label for="phone">Phone Number</label>
-                    <input type="phone" id="phone" name="phone">
+                    <input type="tel" id="phone" name="phone" pattern="\+?[0-9\s\(\)\-]{7,19}" title="Enter a phone number using at least 7 digits and only +, spaces, parentheses, or hyphens." autocomplete="tel">
                 </div>
             </div>
 
             <!-- Company Name Field -->
             <div class="form-group">
                 <label for="company">Company/Organization Name</label>
-                <input type="text" id="company" name="company">
+                <input type="text" id="company" name="company" maxlength="100" autocomplete="organization">
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="service-area">Town or suburb <span class="required">*</span></label>
+                    <input type="text" id="service-area" name="service-area" minlength="2" maxlength="100" autocomplete="address-level2" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="preferred-date">Preferred service date</label>
+                    <input type="date" id="preferred-date" name="preferred-date">
+                </div>
             </div>
 
             <!-- Service Selection Dropdown -->
             <div class="form-group">
                 <label for="service">Which service/product are you interested in? <span class="required">*</span></label>
-                <select id="service" name="service" required>
+                <select id="service" name="service" aria-controls="service-follow-up" required>
                     <option value="">Select an option</option>
-                    <option value="service1">Service 1</option>
-                    <option value="service2">Service 2</option>
-                    <option value="service3">Service 3</option>
-                    <option value="service4">Service 4</option>
+                    <option value="leak-repair">Leak detection and pipe repairs</option>
+                    <option value="drain-cleaning">Drain cleaning and blockage removal</option>
+                    <option value="geyser">Geyser and water heater work</option>
+                    <option value="installation">Bathroom and kitchen installations</option>
+                    <option value="emergency">Emergency plumbing</option>
+                    <option value="water-pressure">Water supply and pressure management</option>
                     <option value="other">Other</option>
                 </select>
             </div>
 
+            <fieldset class="service-follow-up" id="service-follow-up" hidden>
+                <legend>A few details about your service</legend>
+                <p class="service-follow-up-hint" data-follow-up-hint aria-live="polite"></p>
+
+                <div class="form-group service-follow-up-question" data-follow-up-for="leak-repair" hidden>
+                    <label for="leak-status">Is water still leaking?</label>
+                    <select id="leak-status" name="leak-status" disabled>
+                        <option value="">Select an option</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                        <option value="unsure">I am not sure</option>
+                    </select>
+                </div>
+
+                <div class="form-group service-follow-up-question" data-follow-up-for="drain-cleaning" hidden>
+                    <label for="blocked-area">Which area is blocked?</label>
+                    <select id="blocked-area" name="blocked-area" disabled>
+                        <option value="">Select an option</option>
+                        <option value="sink">Sink</option>
+                        <option value="toilet">Toilet</option>
+                        <option value="shower-bath">Shower or bath</option>
+                        <option value="other">Other or more than one area</option>
+                    </select>
+                </div>
+
+                <div class="form-group service-follow-up-question" data-follow-up-for="geyser" hidden>
+                    <label for="geyser-issue">What do you need help with?</label>
+                    <select id="geyser-issue" name="geyser-issue" disabled>
+                        <option value="">Select an option</option>
+                        <option value="no-hot-water">No hot water</option>
+                        <option value="leaking">A leaking geyser</option>
+                        <option value="repair">A repair or maintenance</option>
+                        <option value="installation">Installation or replacement</option>
+                    </select>
+                </div>
+
+                <div class="form-group service-follow-up-question" data-follow-up-for="installation" hidden>
+                    <label for="installation-area">Which installation are you planning?</label>
+                    <select id="installation-area" name="installation-area" disabled>
+                        <option value="">Select an option</option>
+                        <option value="bathroom">Bathroom</option>
+                        <option value="kitchen">Kitchen</option>
+                        <option value="both">Bathroom and kitchen</option>
+                        <option value="other">Another installation</option>
+                    </select>
+                </div>
+
+                <div class="form-group service-follow-up-question" data-follow-up-for="emergency" hidden>
+                    <label for="active-leak">Is water actively leaking or flooding?</label>
+                    <select id="active-leak" name="active-leak" disabled>
+                        <option value="">Select an option</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                        <option value="unsure">I am not sure</option>
+                    </select>
+                </div>
+
+                <div class="form-group service-follow-up-question" data-follow-up-for="water-pressure" hidden>
+                    <label for="water-issue">What water supply issue are you experiencing?</label>
+                    <select id="water-issue" name="water-issue" disabled>
+                        <option value="">Select an option</option>
+                        <option value="low-pressure">Low pressure</option>
+                        <option value="high-pressure">High pressure</option>
+                        <option value="intermittent">Intermittent supply</option>
+                        <option value="no-water">No water</option>
+                    </select>
+                </div>
+
+                <div class="form-group service-follow-up-question" data-follow-up-for="other" hidden>
+                    <label for="other-service">What service do you need?</label>
+                    <input type="text" id="other-service" name="other-service" disabled>
+                </div>
+            </fieldset>
+
             <!-- Enquiry Details Textarea -->
             <div class="form-group">
                 <label for="message">Message/Enquiry Details <span class="required">*</span></label>
-                <textarea id="message" name="message" required placeholder="Please describe your enquiry in detail..."></textarea>
+                <textarea id="message" name="message" minlength="10" maxlength="2000" required placeholder="Please describe your enquiry in detail..."></textarea>
             </div>
+
+            <p class="form-status" data-form-status role="status" aria-live="polite"></p>
 
             <!-- Submit Button -->
             <button type="submit">Submit Enquiry</button>
         </form>
+
+        <p class="whatsapp-contact">
+            Prefer WhatsApp?
+            <a class="whatsapp-link" href="https://wa.me/27791136319?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20your%20plumbing%20services." target="_blank" rel="noopener noreferrer">
+                Chat with us
+            </a>
+        </p>
     </main>
 
     <!-- ============================================
          FOOTER
          ============================================ -->
     <footer>
-        <p>&copy; 2026 The Masepa Industry. All rights reserved.</p>
+        <div class="footer-inner">
+            <p>&copy; 2026 The Masepa Industry. All rights reserved.</p>
+            <address class="footer-contact">
+                <span>15 Bodenstein Street, Polokwane, Limpopo, South Africa</span>
+                <a href="tel:+27791136319">+27 79 113 6319</a>
+                <a href="mailto:letsoalod47@gmail.com">letsoalod47@gmail.com</a>
+            </address>
+            <nav class="social-icons" aria-label="Social media">
+                <a class="social-icon social-icon--youtube" href="https://www.youtube.com/@Letzd" target="_blank" rel="noopener noreferrer" aria-label="Visit Masepa Industry on YouTube">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 7.2a2.8 2.8 0 0 0-2-2C18.2 4.7 12 4.7 12 4.7s-6.2 0-8 .5a2.8 2.8 0 0 0-2 2A29 29 0 0 0 1.5 12 29 29 0 0 0 2 16.8a2.8 2.8 0 0 0 2 2c1.8.5 8 .5 8 .5s6.2 0 8-.5a2.8 2.8 0 0 0 2-2 29 29 0 0 0 .5-4.8 29 29 0 0 0-.5-4.8ZM10 15.5v-7l6 3.5-6 3.5Z" /></svg>
+                </a>
+                <a class="social-icon" href="https://www.instagram.com/dizz_letz36/" target="_blank" rel="noopener noreferrer" aria-label="Visit Masepa Industry on Instagram">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.7" cy="6.6" r=".7" fill="currentColor" stroke="none" /></svg>
+                </a>
+                <a class="social-icon social-icon--facebook" href="https://www.facebook.com/share/1aVHk76T3m/" target="_blank" rel="noopener noreferrer" aria-label="Visit Masepa Industry on Facebook">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1v-2c0-.9.3-1.5 1.6-1.5h1.7V3.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.1H7.3V13h2.8v8h3.4Z" /></svg>
+                </a>
+            </nav>
+        </div>
     </footer>
 </body>
 </html>

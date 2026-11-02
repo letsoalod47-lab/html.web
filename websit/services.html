@@ -1,13 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-ZA">
 <head>
     <!-- Meta tags for character encoding and responsive design -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services | The Masepa Industry</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-src https://www.google.com; form-action 'self'; upgrade-insecure-requests">
+    <title>Plumbing Services in Polokwane | Masepa Industry</title>
+    <meta name="description" content="Explore plumbing services in Polokwane, including leak detection, pipe repairs, drain cleaning, geyser installations and 24/7 emergency plumbing.">
+    <link rel="canonical" href="https://masepaplumbing.com/services.html">
+    <meta property="og:locale" content="en_ZA">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="The Masepa Industry">
+    <meta property="og:title" content="Plumbing Services in Polokwane | Masepa Industry">
+    <meta property="og:description" content="Explore plumbing services in Polokwane, including leak detection, pipe repairs, drain cleaning, geyser installations and 24/7 emergency plumbing.">
+    <meta property="og:url" content="https://masepaplumbing.com/services.html">
     
     <link rel="stylesheet" href="CSS/style.css">
-    <script src="menu.js" defer></script>
+    <script src="JAVA/menu.js" defer></script>
+    <script src="JAVA/services.js" defer></script>
 </head>
 <body>
     <!-- ============================================
@@ -59,73 +69,68 @@
             </p>
         </article>
 
-        <!-- Services Grid -->
-        <section class="services-grid">
-            <!-- Service Card 1: Leak Detection & Pipe Repairs -->
-            <div class="service-card">
-                <img src="images/service1.jpg" alt="Pipe leak detection and repair service">
-                <div class="service-card-content">
-                    <h3>Leak Detection & Pipe Repairs</h3>
-                    <p>
-                        Water leaks waste money and can damage your walls, ceilings, and foundation. We use modern leak detection tools to find hidden leaks without breaking unnecessary walls. Our team repairs burst pipes, dripping taps, and leaking joints quickly and cleanly. We work with copper, PVC, and PPR piping to make sure the fix lasts.
-                    </p>
-                </div>
-            </div>
+        <div class="service-toolbar">
+            <label class="service-search" for="service-search">
+                <span class="sr-only">Search services</span>
+                <input id="service-search" type="search" data-service-search placeholder="Search services..." aria-label="Search services">
+            </label>
+            <label class="service-sort" for="service-sort">
+                <span>Sort by</span>
+                <select id="service-sort" data-service-sort aria-label="Sort services">
+                    <option value="name-asc">Name A–Z</option>
+                    <option value="name-desc">Name Z–A</option>
+                    <option value="category">Category</option>
+                </select>
+            </label>
+        </div>
 
-            <!-- Service Card 2: Drain Cleaning & Blockage Removal -->
-            <div class="service-card">
-                <img src="images/service2.jpg" alt="Professional drain cleaning service">
-                <div class="service-card-content">
-                    <h3>Drain Cleaning & Blockage Removal</h3>
-                    <p>
-                        Blocked drains and toilets can disrupt your whole day. We provide professional drain cleaning using high-pressure water jetting and drain rods to clear grease, hair, roots, and other blockages. We also inspect drains with cameras to find the root cause and prevent future problems.
-                    </p>
-                </div>
-            </div>
+        <div class="service-filters" role="group" aria-label="Filter services by type" data-service-filters>
+            <button class="service-filter" type="button" data-service-filter="all" aria-pressed="true">All services</button>
+            <button class="service-filter" type="button" data-service-filter="repairs" aria-pressed="false">Repairs</button>
+            <button class="service-filter" type="button" data-service-filter="installations" aria-pressed="false">Installations</button>
+            <button class="service-filter" type="button" data-service-filter="emergency" aria-pressed="false">Emergency</button>
+        </div>
+        <p class="service-filter-status" data-service-filter-status role="status" aria-live="polite">Showing all 6 services</p>
 
-            <!-- Service Card 3: Geyser & Water Heater Installation / Repair -->
-            <div class="service-card">
-                <img src="images/service3.jpg" alt="Geyser and water heater installation">
-                <div class="service-card-content">
-                    <h3>Geyser & Water Heater Installation / Repair</h3>
-                    <p>
-                        No hot water? We install, repair, and maintain all types of electric and solar geysers. Our service includes new geyser installation, thermostat replacement, element repairs, and burst geyser replacement. We also install pressure valves and drip trays to meet SABS safety standards.
-                    </p>
-                </div>
-            </div>
+        <section class="services-grid" data-services-grid aria-live="polite"></section>
 
-            <!-- Service Card 4: Bathroom & Kitchen Plumbing Installations -->
-            <div class="service-card">
-                <img src="images/service4.jpg" alt="Bathroom and kitchen plumbing installation">
-                <div class="service-card-content">
-                    <h3>Bathroom & Kitchen Plumbing Installations</h3>
-                    <p>
-                        Renovating or building? We handle complete plumbing installations for bathrooms and kitchens. This includes installing basins, toilets, showers, mixers, sinks, dishwashers, and water filtration systems. We do both new installations and upgrades, with neat pipework and no leaks.
-                    </p>
-                </div>
-            </div>
+        <section class="faq-section" aria-labelledby="faq-title" data-faq-accordion>
+            <h2 id="faq-title">Frequently Asked Questions</h2>
 
-            <!-- Service Card 5: Emergency Plumbing Services -->
-            <div class="service-card">
-                <img src="images/service5.png" alt="24/7 emergency plumbing services">
-                <div class="service-card-content">
-                    <h3>Emergency Plumbing Services</h3>
-                    <p>
-                        Plumbing emergencies don't wait for business hours. We offer 24/7 emergency services for burst pipes, major leaks, and blocked sewers. Our rapid response team will minimize water damage and get your plumbing back to normal quickly. We're available nights, weekends, and holidays with competitive emergency rates.
-                    </p>
+            <details class="faq-item">
+                <summary>What plumbing services do you provide?</summary>
+                <div class="faq-answer">
+                    <p>We provide leak detection and pipe repairs, drain cleaning, geyser work, bathroom and kitchen installations, emergency plumbing, and water pressure management.</p>
                 </div>
-            </div>
+            </details>
 
-            <!-- Service Card 6: Water Supply & Pressure Management -->
-            <div class="service-card">
-                <img src="images/service6.png" alt="Water supply and pressure management systems">
-                <div class="service-card-content">
-                    <h3>Water Supply & Pressure Management</h3>
-                    <p>
-                        Low water pressure or unreliable supply? We install pressure-boosting systems, water tanks, and pressure switches to ensure consistent water pressure throughout your property. We also handle water meter installation, supply line upgrades, and pressure reduction valve installations for optimal water flow and safety.
-                    </p>
+            <details class="faq-item">
+                <summary>Do you handle plumbing emergencies?</summary>
+                <div class="faq-answer">
+                    <p>Yes. Emergency service is available for burst pipes, major leaks, and blocked sewers, including nights, weekends, and holidays.</p>
                 </div>
-            </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Which areas do you serve?</summary>
+                <div class="faq-answer">
+                    <p>We serve homes and businesses in Polokwane, Limpopo.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Can you install or repair a geyser?</summary>
+                <div class="faq-answer">
+                    <p>Yes. We install, repair, and maintain electric and solar geysers, including elements, thermostats, and burst geyser replacements.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>How do I request a plumbing service?</summary>
+                <div class="faq-answer">
+                    <p>Send your request through our <a href="enquiry.html">service enquiry form</a>, and include details about the plumbing issue.</p>
+                </div>
+            </details>
         </section>
 
         <!-- Why Choose Us Section -->
@@ -161,7 +166,25 @@
          FOOTER
          ============================================ -->
     <footer>
-        <p>&copy; 2026 The Masepa Industry. All rights reserved.</p>
+        <div class="footer-inner">
+            <p>&copy; 2026 The Masepa Industry. All rights reserved.</p>
+            <address class="footer-contact">
+                <span>15 Bodenstein Street, Polokwane, Limpopo, South Africa</span>
+                <a href="tel:+27791136319">+27 79 113 6319</a>
+                <a href="mailto:letsoalod47@gmail.com">letsoalod47@gmail.com</a>
+            </address>
+            <nav class="social-icons" aria-label="Social media">
+                <a class="social-icon social-icon--youtube" href="https://www.youtube.com/@Letzd" target="_blank" rel="noopener noreferrer" aria-label="Visit Masepa Industry on YouTube">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 7.2a2.8 2.8 0 0 0-2-2C18.2 4.7 12 4.7 12 4.7s-6.2 0-8 .5a2.8 2.8 0 0 0-2 2A29 29 0 0 0 1.5 12 29 29 0 0 0 2 16.8a2.8 2.8 0 0 0 2 2c1.8.5 8 .5 8 .5s6.2 0 8-.5a2.8 2.8 0 0 0 2-2 29 29 0 0 0 .5-4.8 29 29 0 0 0-.5-4.8ZM10 15.5v-7l6 3.5-6 3.5Z" /></svg>
+                </a>
+                <a class="social-icon" href="https://www.instagram.com/dizz_letz36/" target="_blank" rel="noopener noreferrer" aria-label="Visit Masepa Industry on Instagram">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.7" cy="6.6" r=".7" fill="currentColor" stroke="none" /></svg>
+                </a>
+                <a class="social-icon social-icon--facebook" href="https://www.facebook.com/share/1aVHk76T3m/" target="_blank" rel="noopener noreferrer" aria-label="Visit Masepa Industry on Facebook">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1v-2c0-.9.3-1.5 1.6-1.5h1.7V3.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.1H7.3V13h2.8v8h3.4Z" /></svg>
+                </a>
+            </nav>
+        </div>
     </footer>
 </body>
 </html>

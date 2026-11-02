@@ -1,13 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-ZA">
 <head>
     <!-- Meta tags for character encoding and responsive design -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | The Masepa Industry</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-src https://www.google.com; form-action 'self'; upgrade-insecure-requests">
+    <title>About Our Plumbing Company in Polokwane | Masepa</title>
+    <meta name="description" content="Learn about The Masepa Industry, a plumbing company serving Polokwane, Limpopo, with repairs, installations and emergency plumbing.">
+    <link rel="canonical" href="https://masepaplumbing.com/about.html">
+    <meta property="og:locale" content="en_ZA">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="The Masepa Industry">
+    <meta property="og:title" content="About Our Plumbing Company in Polokwane | Masepa">
+    <meta property="og:description" content="Learn about The Masepa Industry, a plumbing company serving Polokwane, Limpopo, with repairs, installations and emergency plumbing.">
+    <meta property="og:url" content="https://masepaplumbing.com/about.html">
     
     <link rel="stylesheet" href="CSS/style.css">
-    <script src="menu.js" defer></script>
+    <script src="JAVA/menu.js" defer></script>
+    <script src="JAVA/about.js" defer></script>
 </head>
 <body>
     <!-- ============================================
@@ -78,6 +88,28 @@
             </p>
         </article>
 
+        <section class="project-gallery" aria-labelledby="project-gallery-title">
+            <h2 id="project-gallery-title">Project highlights</h2>
+            <div class="gallery-grid">
+                <button class="gallery-item" type="button" data-lightbox-trigger data-image="images/bathroom-kitchen-plumbing-installation.jpg" data-title="Bathroom installation" data-caption="Clean, modern bathroom plumbing installation completed for a residential upgrade.">
+                    <img src="images/bathroom-kitchen-plumbing-installation.jpg" alt="Modern bathroom plumbing installation" loading="lazy" decoding="async">
+                    <span>Bathroom installation</span>
+                </button>
+                <button class="gallery-item" type="button" data-lightbox-trigger data-image="images/geyser-water-heater-installation.jpg" data-title="Geyser upgrade" data-caption="Efficient geyser replacement and safety check for a reliable hot water supply.">
+                    <img src="images/geyser-water-heater-installation.jpg" alt="Geyser installation and maintenance" loading="lazy" decoding="async">
+                    <span>Geyser upgrade</span>
+                </button>
+                <button class="gallery-item" type="button" data-lightbox-trigger data-image="images/drain-cleaning-blockage-removal.jpg" data-title="Drain clearing" data-caption="Fast drain maintenance that restores flow and protects plumbing systems from damage.">
+                    <img src="images/drain-cleaning-blockage-removal.jpg" alt="Drain cleaning and blockage removal" loading="lazy" decoding="async">
+                    <span>Drain clearing</span>
+                </button>
+                <button class="gallery-item" type="button" data-lightbox-trigger data-image="images/emergency-plumbing.png" data-title="Emergency response" data-caption="Urgent repair support designed to reduce downtime and prevent further property damage.">
+                    <img src="images/emergency-plumbing.png" alt="Emergency plumbing repair" loading="lazy" decoding="async">
+                    <span>Emergency response</span>
+                </button>
+            </div>
+        </section>
+
         <!-- Leadership Team Section -->
         <section class="team-section">
             <h2>Our Leadership Team</h2>
@@ -133,11 +165,42 @@
         </section>
     </main>
 
+    <div class="lightbox-overlay" data-lightbox hidden>
+        <div class="lightbox-dialog" role="dialog" aria-modal="true" aria-labelledby="lightbox-title">
+            <button class="lightbox-close" type="button" aria-label="Close image preview" data-close-lightbox>&times;</button>
+            <figure class="lightbox-figure">
+                <img class="lightbox-image" src="" alt="" data-lightbox-image>
+                <figcaption>
+                    <strong id="lightbox-title" data-lightbox-title>Project image</strong>
+                    <span data-lightbox-caption></span>
+                </figcaption>
+            </figure>
+        </div>
+    </div>
+
     <!-- ============================================
          FOOTER
          ============================================ -->
     <footer>
-        <p>&copy; 2026 The Masepa Industry. All rights reserved.</p>
+        <div class="footer-inner">
+            <p>&copy; 2026 The Masepa Industry. All rights reserved.</p>
+            <address class="footer-contact">
+                <span>15 Bodenstein Street, Polokwane, Limpopo, South Africa</span>
+                <a href="tel:+27791136319">+27 79 113 6319</a>
+                <a href="mailto:letsoalod47@gmail.com">letsoalod47@gmail.com</a>
+            </address>
+            <nav class="social-icons" aria-label="Social media">
+                <a class="social-icon social-icon--youtube" href="https://www.youtube.com/@Letzd" target="_blank" rel="noopener noreferrer" aria-label="Visit Masepa Industry on YouTube">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 7.2a2.8 2.8 0 0 0-2-2C18.2 4.7 12 4.7 12 4.7s-6.2 0-8 .5a2.8 2.8 0 0 0-2 2A29 29 0 0 0 1.5 12 29 29 0 0 0 2 16.8a2.8 2.8 0 0 0 2 2c1.8.5 8 .5 8 .5s6.2 0 8-.5a2.8 2.8 0 0 0 2-2 29 29 0 0 0 .5-4.8 29 29 0 0 0-.5-4.8ZM10 15.5v-7l6 3.5-6 3.5Z" /></svg>
+                </a>
+                <a class="social-icon" href="https://www.instagram.com/dizz_letz36/" target="_blank" rel="noopener noreferrer" aria-label="Visit Masepa Industry on Instagram">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.7" cy="6.6" r=".7" fill="currentColor" stroke="none" /></svg>
+                </a>
+                <a class="social-icon social-icon--facebook" href="https://www.facebook.com/share/1aVHk76T3m/" target="_blank" rel="noopener noreferrer" aria-label="Visit Masepa Industry on Facebook">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1v-2c0-.9.3-1.5 1.6-1.5h1.7V3.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.1H7.3V13h2.8v8h3.4Z" /></svg>
+                </a>
+            </nav>
+        </div>
     </footer>
 </body>
 </html>
